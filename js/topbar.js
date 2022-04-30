@@ -36,7 +36,7 @@ class TopBar {
 
     languageChoose(target) {
         const language = target.closest(`label`);
-        document.querySelectorAll(`.languages label`).forEach((element) => element.classList.remove(`active`));
+        this.elements.languagesLabels.forEach((element) => element.classList.remove(`active`));
         language.classList.add(`active`);
     }
 
@@ -57,14 +57,14 @@ class TopBar {
     unAuthorizedButtons(target) {
         this.clearTabs();
         this.modal.show();
-        document.querySelector(`.authorize__menu`).classList.remove(`hidden`);
+        this.elements.authMenu.classList.remove(`hidden`);
         document.querySelector(`#auth${target.id}`).classList.add(`active`);
         document.querySelector(`[data-tab-id=auth${target.id}]`).classList.remove(`hidden`);
     }
 
     clearTabs() {
         this.elements.tabs.forEach((element) => element.classList.remove(`active`))
-        document.querySelectorAll(`[data-tab-id]`).forEach((element) => element.classList.add(`hidden`))
+        this.elements.dataTabs.forEach((element) => element.classList.add(`hidden`))
     }
 
     bindElements() {
@@ -80,8 +80,10 @@ class TopBar {
         this.elements.language = document.querySelector(`.language`);
         this.elements.languageBack = document.querySelector(`.languages__top`);
         this.elements.languages = document.querySelector(`.languages`);
+        this.elements.languagesLabels = document.querySelectorAll(`.languages label`);
         this.elements.authMenu = document.querySelector(`.authorize__menu`);
         this.elements.tabs = document.querySelectorAll(`.tab`);
+        this.elements.dataTabs = document.querySelectorAll(`[data-tab-id]`);
         this.elements.authButtons = document.querySelectorAll(`.js-showAuthMenu`);
         this.elements.body = document.body;
     }
