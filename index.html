@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:,regular,700&display=swap" rel="stylesheet" />
+    <title>Books</title>
+</head>
+
+<body>
+
+    <Header>
+        <div class="header__logo">
+            <a href=""><img src="./img/Logo.png" alt=""></a>
+        </div>
+        <div class="header__search">
+            <input type="text">
+            <button>
+                <svg>
+                    <use xlink:href="sprite.svg#search"></use>
+                </svg>
+            </button>
+        </div>
+        <!-- <div class="header__authorize">
+            <button class="header__login">Войти</button>
+            <button class="header__registration">Регистрация</button>
+            <div class="authorize__menu">
+                <div>
+                    <button class="active">Войти</button>
+                    <button>Зарегистрироваться</button>
+                </div>
+                <div class="forms">
+                    <form action="">
+                        <label for="username">Имя пользователя</label>
+                        <input type="text" name="username" id="name">
+                        <label for="password">Пароль</label>
+                        <input type="password" name="password" id="pass">
+                        <button>Войти</button>
+                    </form>
+                </div>
+            </div>
+        </div> -->
+        <div class="header__profile">
+            <a href="">
+                <svg>
+                    <use xlink:href="sprite.svg#notification"></use>
+                </svg>
+            </a>
+            <a href="">
+                <svg>
+                    <use xlink:href="sprite.svg#mail"></use>
+                </svg>
+            </a>
+            <div class="profile">
+                <img src="./img/profile.jpg" alt="" class="profile__image">
+                <div class="language__menu hidden dropdown">
+                    <div class="languages__top">
+                        <label for="">
+                            <svg>
+                                <use xlink:href="sprite.svg#left"></use>
+                            </svg>
+                        </label><p>Язык</p>
+                    </div>
+                    <div class="languages">
+                        <label for="">English</label>
+                        <label for="">Espaniol</label>
+                        <label for="">Українська</label>
+                        <label for="" class="active">Русский</label>
+                    </div>
+                </div>
+                <div class="profile__menu hidden dropdown">
+                    <div class="menu__profile">
+                        <div class="profile__user">
+                            <a href="" class="menu__user">
+                                <img src="./img/profile.jpg" alt="" class="profile__image">
+                            </a>
+                            <p>Syargik</p>
+                        </div>
+                        <div class="online__status">В сети <label for="" class="" id="online"></label></div>
+                    </div>
+                    <div class="menu__settings">
+                        <div class="language">
+                            <div>
+                                <svg>
+                                    <use xlink:href="sprite.svg#language"></use>
+                                </svg> Язык
+                            </div>
+                            <span>></span>
+                        </div>
+                        <div class="color__mod">
+                            <div>
+                                <svg>
+                                    <use xlink:href="sprite.svg#dark"></use>
+                                </svg> Тёмное оформление
+                            </div>
+                            <label for="" class="" id="mode"></label>
+                        </div>
+                        <a href="" class="exit">
+                            <svg>
+                                <use xlink:href="sprite.svg#exit"></use>
+                            </svg>
+                            Выход
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </Header>
+    <main>
+        <div class="side__bar">
+            <div class="side__recomendation">Рекомендации</div>
+            <div class="side__user">
+                <a href=""><img src="./img/profile.jpg" alt=""></a>
+                <a href="" class="user__name">teststastsetettt</a>
+            </div>
+        </div>
+        <div class="main__content">
+            <div class="main__filter">
+                <div class="main__categories">
+                    <div class="main__category">
+                        <a href="">
+                            <h4>Научпоп</h4>
+                            <svg>
+                                <use xlink:href="sprite.svg#glasses"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="main__category">
+                        <a href="">
+                            <h4>Фантастика</h4>
+                            <svg>
+                                <use xlink:href="sprite.svg#wizard"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="main__category">
+                        <a href="">
+                            <h4>Романтика</h4>
+                            <svg>
+                                <use xlink:href="sprite.svg#rose"></use>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="main__search">
+                    <input type="text">
+                    <button>
+                        <svg>
+                            <use xlink:href="sprite.svg#search"></use>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="main__books">
+                <div class="main__book">
+                    <div class="book__image">
+                        <a href=""><img src="./img/book.jpg" alt=""></a>
+                    </div>
+                    <div class="book__about">
+                        <a href="" class="book__name">Государь</a>
+                        <a href="" class="book__author">Николло Макиавели</a>
+                    </div>
+                </div>
+                <div class="main__book">
+                    <div class="book__image">
+                        <a href=""><img src="./img/book.jpg" alt=""></a>
+                    </div>
+                    <div class="book__about">
+                        <a href="" class="book__name">Государь</a>
+                        <a href="" class="book__author">Николло Макиавели</a>
+                    </div>
+                </div>
+                <div class="main__book">
+                    <div class="book__image">
+                        <a href=""><img src="./img/book.jpg" alt=""></a>
+                    </div>
+                    <div class="book__about">
+                        <a href="" class="book__name">Государь</a>
+                        <a href="" class="book__author">Николло Макиавели</a>
+                    </div>
+                </div>
+                <div class="main__book">
+                    <div class="book__image">
+                        <a href=""><img src="./img/book.jpg" alt=""></a>
+                    </div>
+                    <div class="book__about">
+                        <a href="" class="book__name">Государь</a>
+                        <a href="" class="book__author">Николло Макиавели</a>
+                    </div>
+                </div>
+                <div class="main__book">
+                    <div class="book__image">
+                        <a href=""><img src="./img/book.jpg" alt=""></a>
+                    </div>
+                    <div class="book__about">
+                        <a href="" class="book__name">Государь</a>
+                        <a href="" class="book__author">Николло Макиавели</a>
+                    </div>
+                </div>
+                <div class="main__book">
+                    <div class="book__image">
+                        <a href=""><img src="./img/book.jpg" alt=""></a>
+                    </div>
+                    <div class="book__about">
+                        <a href="" class="book__name">Государь</a>
+                        <a href="" class="book__author">Николло Макиавели</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
