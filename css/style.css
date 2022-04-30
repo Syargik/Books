@@ -42,6 +42,10 @@ body {
   font-family: Montserrat;
 }
 
+body .scrollLock {
+  overflow: hidden;
+}
+
 input,
 button,
 textarea {
@@ -984,10 +988,6 @@ main .main__content .main__books .main__book .book__about .book__author {
   background-color: #772CE8;
 }
 
-.scrollLock {
-  overflow: hidden;
-}
-
 div[data-modal-name] {
   max-height: 0;
   max-width: 0;
@@ -995,7 +995,6 @@ div[data-modal-name] {
   width: 100%;
   opacity: 0;
 }
-
 div[data-modal-name].visible {
   position: fixed;
   top: 0;

@@ -6,7 +6,7 @@ class TopBar {
 
     dropdownMenu(target) {
         if (!target.closest(`.dropdown`) && !target.closest(`.profile`)) {
-            document.querySelectorAll(`.dropdown`).forEach((element) => element.classList.add(`hidden`))
+            document.querySelectorAll(`.dropdown`).forEach((element) => element.classList.add(`hidden`));
         }
     }
 
@@ -15,13 +15,13 @@ class TopBar {
     }
 
     onlineChanging() {
-        document.querySelector(`.menu__user`).classList.toggle(`online`);
-        document.querySelector(`.profile`).classList.toggle(`online`);
-        document.getElementById(`online`).classList.toggle(`active`);
+        this.elements.userMenu.classList.toggle(`online`);
+        this.elements.profileOnlineStatus.classList.toggle(`online`);
+        this.elements.onlineStatus.classList.toggle(`active`);
     }
 
     modeChanging() {
-        document.getElementById(`mode`).classList.toggle(`active`);
+        this.elements.modeSwitcher.classList.toggle(`active`);
     }
 
     showLanguageMenu() {
@@ -35,23 +35,31 @@ class TopBar {
     }
 
     languageChoose(target) {
-        const language = target.closest(`label`)
-        document.querySelectorAll(`.languages label`).forEach((element) => element.classList.remove(`active`))
-        language.classList.add(`active`)
+        const language = target.closest(`label`);
+        document.querySelectorAll(`.languages label`).forEach((element) => element.classList.remove(`active`));
+        language.classList.add(`active`);
     }
 
     tabsFunc(target) {
         this.clearTabs();
-        document.querySelector(`#${target.id}`).classList.add(`active`)
-        document.querySelector(`[data-tab-id=${target.id}]`).classList.remove(`hidden`)
+        document.querySelector(`#${target.id}`).classList.add(`active`);
+        document.querySelector(`[data-tab-id=${target.id}]`).classList.remove(`hidden`);
+    }
+
+    createModal() {
+        this.modal = new Modal(`auth`, {
+            background: true,
+            closeOnBg: true,
+            showDuration: `0`
+        });
     }
 
     unAuthorizedButtons(target) {
         this.clearTabs();
-        this.elements.modal.show();
-        document.querySelector(`.authorize__menu`).classList.remove(`hidden`)
-        document.querySelector(`#auth${target.id}`).classList.add(`active`)
-        document.querySelector(`[data-tab-id=auth${target.id}]`).classList.remove(`hidden`)
+        this.modal.show();
+        document.querySelector(`.authorize__menu`).classList.remove(`hidden`);
+        document.querySelector(`#auth${target.id}`).classList.add(`active`);
+        document.querySelector(`[data-tab-id=auth${target.id}]`).classList.remove(`hidden`);
     }
 
     clearTabs() {
@@ -60,23 +68,22 @@ class TopBar {
     }
 
     bindElements() {
-        this.elements.profile = document.querySelector(`.profile__image`);
-        this.elements.online = document.querySelector(`.online__status`);
+        this.elements.modeSwitcher = document.getElementById(`mode`);
         this.elements.mode = document.querySelector(`.color__mod`);
+        this.elements.profile = document.querySelector(`.profile__image`);
+        this.elements.menu = document.querySelector(`.profile__menu`);
+        this.elements.userMenu = document.querySelector(`.menu__user`)
+        this.elements.profileOnlineStatus = document.querySelector(`.profile`)
+        this.elements.online = document.querySelector(`.online__status`);
+        this.elements.onlineStatus = document.getElementById(`online`);
+        this.elements.languageMenu = document.querySelector(`.language__menu`);
         this.elements.language = document.querySelector(`.language`);
         this.elements.languageBack = document.querySelector(`.languages__top`);
         this.elements.languages = document.querySelector(`.languages`);
-        this.elements.menu = document.querySelector(`.profile__menu`);
         this.elements.authMenu = document.querySelector(`.authorize__menu`);
         this.elements.tabs = document.querySelectorAll(`.tab`);
         this.elements.authButtons = document.querySelectorAll(`.js-showAuthMenu`);
         this.elements.body = document.body;
-        this.elements.languageMenu = document.querySelector(`.language__menu`);
-        this.elements.modal = new Modal(`auth`, {
-            background: true,
-            closeOnBg: true,
-            showDuration: `0`
-        });
     }
 
     bindHandlers() {
@@ -128,7 +135,7 @@ class TopBar {
     init() {
         this.bindElements();
         this.bindHandlers();
-        this.clearTabs();
+        this.createModal();
     }
 }
 
