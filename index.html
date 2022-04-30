@@ -12,6 +12,43 @@
 
 <body>
 
+    <div class="authorize__menu hidden modal__item">
+        <div>
+            <button id="authlogin" class="tab">Войти</button>
+            <button id="authregistration" class="tab">Зарегистрироваться</button>
+        </div>
+        <div class="forms">
+            <form action="" data-tab-id="authlogin" class="hidden">
+                <label for="username">Имя пользователя</label>
+                <input type="text" name="username" id="name">
+                <label for="password">Пароль</label>
+                <input type="password" name="password" id="pass">
+                <button type="submit">Войти</button>
+            </form>
+            <form action="" data-tab-id="authregistration" class="hidden">
+                <label for="username">Имя пользователя</label>
+                <input type="text" name="username" id="name">
+                <label for="password">Пароль</label>
+                <input type="password" name="password" id="pass">
+                <label for="passwordaprove">Подтвердите пароль</label>
+                <input type="password" name="passwordaprove" id="passaprove">
+                <label for="date">Дата рождения</label>
+                <input type="date" name="date" id="date">
+                <label for="phone">Номер телефона</label>
+                <div class="phone__number">
+                    <select name="" id="">
+                        <option value="usa">США +1</option>
+                        <option value="spain">Испания +34</option>
+                        <option value="ua" selected>Украина +380</option>
+                        <option value="ru">Россия +7</option>
+                    </select> 
+                    <input type="tel" name="phone" id="phone">
+                </div>  
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+    <div data-modal-name="auth"></div>
     <Header>
         <div class="header__logo">
             <a href=""><img src="./img/Logo.png" alt=""></a>
@@ -24,26 +61,11 @@
                 </svg>
             </button>
         </div>
-        <!-- <div class="header__authorize">
-            <button class="header__login">Войти</button>
-            <button class="header__registration">Регистрация</button>
-            <div class="authorize__menu">
-                <div>
-                    <button class="active">Войти</button>
-                    <button>Зарегистрироваться</button>
-                </div>
-                <div class="forms">
-                    <form action="">
-                        <label for="username">Имя пользователя</label>
-                        <input type="text" name="username" id="name">
-                        <label for="password">Пароль</label>
-                        <input type="password" name="password" id="pass">
-                        <button>Войти</button>
-                    </form>
-                </div>
-            </div>
-        </div> -->
-        <div class="header__profile">
+        <div class="header__authorize">
+            <button class="header__login js-showAuthMenu" id="login">Войти</button>
+            <button class="header__registration js-showAuthMenu" id="registration">Регистрация</button>
+        </div>
+        <!-- <div class="header__profile">
             <a href="">
                 <svg>
                     <use xlink:href="sprite.svg#notification"></use>
@@ -107,7 +129,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </Header>
     <main>
         <div class="side__bar">
@@ -213,6 +235,7 @@
         </div>
     </main>
 
+    <script src="modal.js"></script>
     <script src="script.js"></script>
 </body>
 
