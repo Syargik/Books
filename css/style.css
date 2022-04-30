@@ -42,6 +42,10 @@ body {
   font-family: Montserrat;
 }
 
+body .scrollLock {
+  overflow: hidden;
+}
+
 input,
 button,
 textarea {
@@ -190,87 +194,6 @@ header .header__authorize .header__registration {
   background-color: #9256ED;
 }
 header .header__authorize .header__registration:hover {
-  background-color: #772CE8;
-}
-header .header__authorize .authorize__menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  position: absolute;
-  z-index: 4;
-  top: 1000%;
-  left: -300%;
-  width: 300px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  padding: 15px;
-  background-color: #1F1F23;
-  -webkit-box-shadow: 0px 0px 0px 1000px rgba(0, 0, 0, 0.6);
-          box-shadow: 0px 0px 0px 1000px rgba(0, 0, 0, 0.6);
-}
-header .header__authorize .authorize__menu div:not(:last-child) {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 80%;
-}
-header .header__authorize .authorize__menu button {
-  border-radius: 0;
-  padding: 0 0 3px 0;
-  background: none;
-  border-bottom: 2px solid #fff;
-}
-header .header__authorize .authorize__menu button.active {
-  color: #bf94ff;
-  border-bottom: 2px solid #bf94ff;
-}
-header .header__authorize .authorize__menu .forms {
-  margin-top: 25px;
-}
-header .header__authorize .authorize__menu .forms form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-header .header__authorize .authorize__menu .forms form label {
-  margin-bottom: 5px;
-  font-weight: 700;
-}
-header .header__authorize .authorize__menu .forms form input {
-  margin-bottom: 20px;
-  background-color: #464648;
-  padding: 5px;
-  color: #fff;
-  font-size: 16px;
-  border-radius: 5px;
-}
-header .header__authorize .authorize__menu .forms form input:hover {
-  padding: 3px;
-  border: 2px solid #5D5D5F;
-}
-header .header__authorize .authorize__menu .forms form input:focus {
-  padding: 4px;
-  border: 1px solid #772CE8;
-}
-header .header__authorize .authorize__menu .forms form button {
-  background-color: #9256ED;
-  border-radius: 5px;
-  border: none;
-  padding: 5px;
-}
-header .header__authorize .authorize__menu .forms form button:hover {
   background-color: #772CE8;
 }
 header .header__profile {
@@ -947,4 +870,156 @@ main .main__content .main__books .main__book .book__about .book__name {
 main .main__content .main__books .main__book .book__about .book__author {
   font-size: 14px;
   color: rgba(255, 255, 255, 0.6);
+}
+
+.authorize__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: absolute;
+  z-index: 4;
+  top: 25%;
+  left: 50%;
+  width: 270px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 15px;
+  background-color: #1F1F23;
+  -webkit-box-shadow: 0px 0px 0px 1000px rgba(0, 0, 0, 0.6);
+          box-shadow: 0px 0px 0px 1000px rgba(0, 0, 0, 0.6);
+}
+.authorize__menu.hidden {
+  display: none;
+}
+.authorize__menu div:not(:last-child) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+.authorize__menu button {
+  border-radius: 0;
+  padding: 0 0 3px 0;
+  background: none;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-weight: 700;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.authorize__menu button.active {
+  color: #bf94ff;
+  border-bottom: 2px solid #bf94ff;
+}
+.authorize__menu .forms {
+  margin-top: 25px;
+}
+.authorize__menu .forms .hidden {
+  display: none;
+}
+.authorize__menu .forms .phone__number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 15px;
+}
+.authorize__menu .forms .phone__number select {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: #464648;
+  padding: 5px;
+  color: #fff;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.authorize__menu .forms .phone__number input {
+  width: 100%;
+  margin: 0;
+  height: 27px;
+}
+.authorize__menu .forms form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.authorize__menu .forms form label {
+  margin-bottom: 5px;
+  font-weight: 700;
+}
+.authorize__menu .forms form input {
+  margin-bottom: 20px;
+  background-color: #464648;
+  padding: 5px;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 5px;
+}
+.authorize__menu .forms form input:hover {
+  padding: 3px;
+  border: 2px solid #5D5D5F;
+}
+.authorize__menu .forms form input:focus {
+  padding: 4px;
+  border: 1px solid #772CE8;
+}
+.authorize__menu .forms form button {
+  background-color: #9256ED;
+  border-radius: 5px;
+  border: none;
+  padding: 5px;
+}
+.authorize__menu .forms form button:hover {
+  background-color: #772CE8;
+}
+
+div[data-modal-name] {
+  max-height: 0;
+  max-width: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+div[data-modal-name].visible {
+  position: fixed;
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  max-width: 100%;
+  max-height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0 auto;
+  opacity: 1;
+  z-index: 1;
+}
+
+.modal__menu {
+  position: fixed;
+  top: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.3;
 }

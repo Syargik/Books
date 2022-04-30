@@ -43,6 +43,12 @@ body {
     font-family: Montserrat;
 }
 
+body {
+    .scrollLock {
+        overflow: hidden;
+    }
+}
+
 input,
 button,
 textarea {
@@ -182,82 +188,6 @@ header {
 
             &:hover {
                 background-color: #772CE8;
-            }
-        }
-
-        .authorize__menu {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            z-index: 4;
-            top: 1000%;
-            left: -300%;
-            width: 300px;
-            height: fit-content;
-            padding: 15px;
-            background-color: #1F1F23;
-            box-shadow: 0px 0px 0px 1000px rgba($color: #000000, $alpha: 0.6);
-
-            div:not(:last-child) {
-                display: flex;
-                justify-content: space-between;
-                width: 80%;
-            }
-
-            button {
-                border-radius: 0;
-                padding: 0 0 3px 0;
-                background: none;
-                border-bottom: 2px solid #fff;
-
-                &.active {
-                    color: #bf94ff;
-                    border-bottom: 2px solid #bf94ff;
-                }
-            }
-
-            .forms {
-                margin-top: 25px;
-
-                form {
-                    display: flex;
-                    flex-direction: column;
-
-                    label {
-                        margin-bottom: 5px;
-                        font-weight: 700;
-                    }
-
-                    input {
-                        margin-bottom: 20px;
-                        background-color: #464648;
-                        padding: 5px;
-                        color: #fff;
-                        font-size: 16px;
-                        border-radius: 5px;
-
-                        &:hover {
-                            padding: 3px;
-                            border: 2px solid #5D5D5F;
-                        }
-
-                        &:focus {
-                            padding: 4px;
-                            border: 1px solid #772CE8;
-                        }
-                    }
-
-                    button {
-                        background-color: #9256ED;
-                        border-radius: 5px;
-                        border: none;
-                        padding: 5px;
-
-                        &:hover {
-                            background-color: #772CE8;
-                        }
-                    }
-                }
             }
         }
     }
@@ -862,4 +792,137 @@ main {
             }
         }
     }
+}
+
+//===========================================================================//
+
+.authorize__menu {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 4;
+    top: 25%;
+    left: 50%;
+    width: 270px;
+    height: fit-content;
+    padding: 15px;
+    background-color: #1F1F23;
+    box-shadow: 0px 0px 0px 1000px rgba($color: #000000, $alpha: 0.6);
+
+    &.hidden {
+        display: none;
+    }
+
+    div:not(:last-child) {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    button {
+        border-radius: 0;
+        padding: 0 0 3px 0;
+        background: none;
+        border-bottom: 2px solid #fff;
+        color: #fff;
+        font-weight: 700;
+        transition: all .3s ease;
+        &.active {
+            color: #bf94ff;
+            border-bottom: 2px solid #bf94ff;
+        }
+    }
+
+    .forms {
+        margin-top: 25px;
+        .hidden {
+            display: none;
+        }
+        .phone__number {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            select {
+                width: fit-content;
+                background-color: #464648;
+                padding: 5px;
+                color: #fff;
+                border-radius: 5px;
+                margin-right: 5px;
+            }
+            input {
+                width: 100%;
+                margin: 0;
+                height: 27px;
+            }
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            label {
+                margin-bottom: 5px;
+                font-weight: 700;
+            }
+
+            input {
+                margin-bottom: 20px;
+                background-color: #464648;
+                padding: 5px;
+                color: #fff;
+                font-size: 16px;
+                border-radius: 5px;
+
+                &:hover {
+                    padding: 3px;
+                    border: 2px solid #5D5D5F;
+                }
+
+                &:focus {
+                    padding: 4px;
+                    border: 1px solid #772CE8;
+                }
+            }
+
+            button {
+                background-color: #9256ED;
+                border-radius: 5px;
+                border: none;
+                padding: 5px;
+
+                &:hover {
+                    background-color: #772CE8;
+                }
+            }
+        }
+    }
+}
+
+div[data-modal-name] {
+	max-height: 0;
+	max-width: 0;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+    &.visible {
+        position: fixed;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        max-width: 100%;
+        max-height: 100%;
+        align-items: center;
+        margin: 0 auto;
+        opacity: 1;
+        z-index: 1;
+    }
+}
+
+.modal__menu {
+	position: fixed;
+	top: 0;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #000;
+	opacity: 0.3;
 }
