@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/profile.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:,regular,700&display=swap" rel="stylesheet" />
+    <title>Books</title>
+</head>
+
+<body>
+
+    <div class="authorize__menu hidden modal__item">
+        <div>
+            <button id="authlogin" class="tab">Войти</button>
+            <button id="authregistration" class="tab">Зарегистрироваться</button>
+        </div>
+        <div class="forms">
+            <form action="" data-tab-id="authlogin" class="hidden">
+                <label for="username">Имя пользователя</label>
+                <input type="text" name="username" id="name">
+                <label for="password">Пароль</label>
+                <input type="password" name="password" id="pass">
+                <button type="submit">Войти</button>
+            </form>
+            <form action="" data-tab-id="authregistration" class="hidden">
+                <label for="username">Имя пользователя</label>
+                <input type="text" name="username" id="name">
+                <label for="password">Пароль</label>
+                <input type="password" name="password" id="pass">
+                <label for="passwordaprove">Подтвердите пароль</label>
+                <input type="password" name="passwordaprove" id="passaprove">
+                <label for="date">Дата рождения</label>
+                <input type="date" name="date" id="date">
+                <label for="phone">Номер телефона</label>
+                <div class="phone__number">
+                    <select name="" id="">
+                        <option value="usa">США +1</option>
+                        <option value="spain">Испания +34</option>
+                        <option value="ua" selected>Украина +380</option>
+                        <option value="ru">Россия +7</option>
+                    </select>
+                    <input type="tel" name="phone" id="phone">
+                </div>
+                <button type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+    <div data-modal-name="auth"></div>
+    <Header>
+        <div class="header__logo">
+            <a href=""><img src="./img/Logo.png" alt=""></a>
+        </div>
+        <div class="header__search">
+            <input type="text">
+            <button>
+                <svg>
+                    <use xlink:href="sprite.svg#search"></use>
+                </svg>
+            </button>
+        </div>
+        <div class="header__authorize">
+            <button class="header__login js-showAuthMenu" id="login">Войти</button>
+            <button class="header__registration js-showAuthMenu" id="registration">Регистрация</button>
+        </div>
+        <!-- <div class="header__profile">
+            <a href="">
+                <svg>
+                    <use xlink:href="sprite.svg#notification"></use>
+                </svg>
+            </a>
+            <a href="">
+                <svg>
+                    <use xlink:href="sprite.svg#mail"></use>
+                </svg>
+            </a>
+            <div class="profile">
+                <img src="./img/profile.jpg" alt="" class="profile__image">
+                <div class="language__menu hidden dropdown">
+                    <div class="languages__top">
+                        <label for="">
+                            <svg>
+                                <use xlink:href="sprite.svg#left"></use>
+                            </svg>
+                        </label><p>Язык</p>
+                    </div>
+                    <div class="languages">
+                        <label for="">English</label>
+                        <label for="">Espaniol</label>
+                        <label for="">Українська</label>
+                        <label for="" class="active">Русский</label>
+                    </div>
+                </div>
+                <div class="profile__menu hidden dropdown">
+                    <div class="menu__profile">
+                        <div class="profile__user">
+                            <a href="" class="menu__user">
+                                <img src="./img/profile.jpg" alt="" class="profile__image">
+                            </a>
+                            <p>Syargik</p>
+                        </div>
+                        <div class="online__status">В сети <label for="" class="" id="online"></label></div>
+                    </div>
+                    <div class="menu__settings">
+                        <div class="language">
+                            <div>
+                                <svg>
+                                    <use xlink:href="sprite.svg#language"></use>
+                                </svg> Язык
+                            </div>
+                            <span>></span>
+                        </div>
+                        <div class="color__mod">
+                            <div>
+                                <svg>
+                                    <use xlink:href="sprite.svg#dark"></use>
+                                </svg> Тёмное оформление
+                            </div>
+                            <label for="" class="" id="mode"></label>
+                        </div>
+                        <a href="" class="exit">
+                            <svg>
+                                <use xlink:href="sprite.svg#exit"></use>
+                            </svg>
+                            Выход
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </Header>
+    <main>
+        <div class="side__bar">
+            <div class="side__recomendation">Рекомендации</div>
+            <div class="side__user">
+                <a href=""><img src="./img/profile.jpg" alt=""></a>
+                <a href="" class="user__name">teststastsetettt</a>
+            </div>
+        </div>
+        <div class="main__content">
+            <div class="background">
+                <img src="./img/360_F_207154541_QGSAOYNctylzo3ZEJAI0VM5huKfZWOQn.jpg" alt="">
+            </div>
+            <div class="user__profile">
+                <div class="user__info">
+                    <img src="./img/profile.jpg" alt="" class="user__image">
+                    <p>Syargik</p>
+                </div>
+                <div class="user__book">
+                    <div class="best__book">
+                        <div class="book__image">
+                            <a href=""><img src="./img/book.jpg" alt=""></a>
+                        </div>
+                        <div class="book__about">
+                            <a href="" class="book__name">Государь</a>
+                            <a href="" class="book__author">Николло Макиавели</a>
+                        </div>
+                    </div>
+                    <div class="book__description">
+                        <div class="description">
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum et, quidem officia
+                                placeat architecto quam deleniti suscipit mollitia nam. Placeat veritatis nesciunt
+                                dolores quae aliquid ad doloremque perferendis assumenda sint asperiores. Obcaecati
+                                dolorum hic placeat accusamus, ipsam cumque consequuntur, id commodi modi quae itaque
+                                consequatur voluptatem ab ex quaerat. Perspiciatis?</p>
+                        </div>
+                        <div class="book__rating">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main__books">
+                <div class="main__book">
+                    <div class="book__image">
+                        <a href=""><img src="./img/book.jpg" alt=""></a>
+                    </div>
+                    <div class="book__about">
+                        <a href="" class="book__name">Государь</a>
+                        <a href="" class="book__author">Николло Макиавели</a>
+                    </div>
+                </div>
+                <div class="main__book">
+                    <div class="book__image">
+                        <a href=""><img src="./img/book.jpg" alt=""></a>
+                    </div>
+                    <div class="book__about">
+                        <a href="" class="book__name">Государь</a>
+                        <a href="" class="book__author">Николло Макиавели</a>
+                    </div>
+                </div>
+                <div class="main__book">
+                    <div class="book__image">
+                        <a href=""><img src="./img/book.jpg" alt=""></a>
+                    </div>
+                    <div class="book__about">
+                        <a href="" class="book__name">Государь</a>
+                        <a href="" class="book__author">Николло Макиавели</a>
+                    </div>
+                </div>
+                <div class="main__book">
+                    <div class="book__image">
+                        <a href=""><img src="./img/book.jpg" alt=""></a>
+                    </div>
+                    <div class="book__about">
+                        <a href="" class="book__name">Государь</a>
+                        <a href="" class="book__author">Николло Макиавели</a>
+                    </div>
+                </div>
+                <div class="main__book">
+                    <div class="book__image">
+                        <a href=""><img src="./img/book.jpg" alt=""></a>
+                    </div>
+                    <div class="book__about">
+                        <a href="" class="book__name">Государь</a>
+                        <a href="" class="book__author">Николло Макиавели</a>
+                    </div>
+                </div>
+                <div class="main__book">
+                    <div class="book__image">
+                        <a href=""><img src="./img/book.jpg" alt=""></a>
+                    </div>
+                    <div class="book__about">
+                        <a href="" class="book__name">Государь</a>
+                        <a href="" class="book__author">Николло Макиавели</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/modal.js"></script>
+    <script src="/js/topbar.js"></script>
+</body>
+
+</html>
