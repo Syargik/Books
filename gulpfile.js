@@ -1,7 +1,7 @@
-let project_folder = "dist";
-let source_folder = "src";
+const project_folder = "dist";
+const source_folder = "src";
 
-let path = {
+const path = {
   build: {
     html: project_folder + "",
     css: project_folder + "/css/",
@@ -23,7 +23,7 @@ let path = {
   clean: "./" + project_folder + "/"
 }
 
-let {src, dest} = require('gulp'),
+const {src, dest} = require('gulp'),
   gulp = require('gulp'),
   scss = require('gulp-sass')(require('sass')),
   svgSprite = require('gulp-svg-sprite'),
@@ -91,8 +91,8 @@ function watchFiles() {
   gulp.watch([path.watch.img], img);
 }
 
-let build = gulp.series(clean, html, css, js, img);
-let watch = gulp.parallel(build, watchFiles, browserSync);
+const build = gulp.series(clean, html, css, js, img);
+const watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.default = watch;
 exports.watch = watch;
