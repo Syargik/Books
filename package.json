@@ -3,6 +3,9 @@
     "browser-sync": "^2.27.9",
     "cz-conventional-changelog": "^3.3.0",
     "del": "^6.0.0",
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "gulp": "^4.0.2",
     "gulp-sass": "^5.1.0",
     "gulp-svg-sprite": "^1.5.0",
@@ -11,6 +14,14 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "husky": "^7.0.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "eslint ./**/*.js --fix"
     }
   }
 }

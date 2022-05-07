@@ -1,94 +1,92 @@
-const project_folder = "dist";
-const source_folder = "src";
+const projectFolder = 'dist';
+const sourceFolder = 'src';
 
 const path = {
-  build: {
-    html: project_folder + "",
-    css: project_folder + "/css/",
-    js: project_folder + "/js/",
-    img: project_folder + "/img/"
-  },
-  src: {
-    html: source_folder + "/*.html",
-    css: [source_folder + "/scss/**/*.scss", "!" + source_folder + "/_*.scss"],
-    js: source_folder + "/js/*.js",
-    img: source_folder + "/img/**/*.{jpg,png,svg}"
-  },
-  watch: {
-    html: source_folder + "/**/*.html",
-    css: source_folder + "/scss/**/*.scss",
-    js: source_folder + "/js/**/*.js",
-    img: source_folder + "/img/**/*.{jpg,png,svg}"
-  }, 
-  clean: "./" + project_folder + "/"
-}
-
-const {src, dest} = require('gulp'),
-  gulp = require('gulp'),
-  scss = require('gulp-sass')(require('sass')),
-  svgSprite = require('gulp-svg-sprite'),
-  browsersync = require('browser-sync').create(),
-  del = require('del');
-
-function browserSync () {
-  browsersync.init ({
-    server: {
-      baseDir: "./" + project_folder + "/"
+    build: {
+        html: `${projectFolder}`,
+        css: `${projectFolder}/css/`,
+        js: `${projectFolder}/js/`,
+        img: `${projectFolder}/img/`,
     },
-    port:3000,
-    notify:false
-  })
+    src: {
+        html: `${sourceFolder}/*.html`,
+        css: [`${sourceFolder}/scss/**/*.scss`, `!${sourceFolder}/_*.scss`],
+        js: `${sourceFolder}/js/*.js`,
+        img: `${sourceFolder}/img/**/*.{jpg,png,svg}`,
+    },
+    watch: {
+        html: `${sourceFolder}/**/*.html`,
+        css: `${sourceFolder}/scss/**/*.scss`,
+        js: `${sourceFolder}/js/**/*.js`,
+        img: `${sourceFolder}/img/**/*.{jpg,png,svg}`,
+    },
+    clean: `./${projectFolder}/`,
+};
+
+const { src, dest } = require('gulp');
+const gulp = require('gulp');
+const scss = require('gulp-sass')(require('sass'));
+const svgSprite = require('gulp-svg-sprite');
+const browsersync = require('browser-sync').create();
+const del = require('del');
+
+function browserSync() {
+    browsersync.init({
+        server: {
+            baseDir: `./${projectFolder}/`,
+        },
+        port: 3000,
+        notify: false,
+    });
 }
 
-function clean () {
-  return del(path.clean);
+function clean() {
+    return del(path.clean);
 }
 
 function html() {
-  return src(path.src.html)
-    .pipe(dest(path.build.html))
-    .pipe(browsersync.stream())
+    return src(path.src.html)
+        .pipe(dest(path.build.html))
+        .pipe(browsersync.stream());
 }
 
 function css() {
-  return src(path.src.css)
-    .pipe(
-      scss({
-        outputStyle: "expanded"
-      })
-    )
-    .pipe(dest(path.build.css))
-    .pipe(browsersync.stream())
+    return src(path.src.css)
+        .pipe(
+            scss({
+                outputStyle: 'expanded',
+            }),
+        )
+        .pipe(dest(path.build.css))
+        .pipe(browsersync.stream());
 }
 
 function js() {
-  return src(path.src.js)
-    .pipe(dest(path.build.js))
+    return src(path.src.js)
+        .pipe(dest(path.build.js));
 }
 
 function img() {
-  return src(path.src.img)
-    .pipe(dest(path.build.img))
+    return src(path.src.img)
+        .pipe(dest(path.build.img));
 }
 
-gulp.task('svgSprite', function () {
-  return gulp.src([source_folder + '/img/icons/*.svg'])
-    .pipe(svgSprite ({
-      mode: {
-        stack: {
-          sprite: "../icons/icons.svg",
-          example: true
-        }
-      },
+gulp.task('svgSprite', () => gulp.src([`${sourceFolder}/img/icons/*.svg`])
+    .pipe(svgSprite({
+        mode: {
+            stack: {
+                sprite: '../icons/icons.svg',
+                example: true,
+            },
+        },
     }))
-    .pipe(dest(path.build.img))
-})
+    .pipe(dest(path.build.img)));
 
 function watchFiles() {
-  gulp.watch([path.watch.html], html);
-  gulp.watch([path.watch.css], css);
-  gulp.watch([path.watch.js], js);
-  gulp.watch([path.watch.img], img);
+    gulp.watch([path.watch.html], html);
+    gulp.watch([path.watch.css], css);
+    gulp.watch([path.watch.js], js);
+    gulp.watch([path.watch.img], img);
 }
 
 const build = gulp.series(clean, html, css, js, img);
