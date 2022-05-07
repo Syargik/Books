@@ -91,7 +91,7 @@ function watchFiles() {
   gulp.watch([path.watch.img], img);
 }
 
-let build = gulp.series(clean, gulp.parallel(html, css, js, img));
+let build = gulp.series(clean, html, css, js, img);
 let watch = gulp.parallel(build, watchFiles, browserSync);
 
 exports.default = watch;
