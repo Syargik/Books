@@ -21,7 +21,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npx eslint ./**/*.js --fix"
+      "pre-commit": "eslint ./**/*.js --fix"
     }
   }
 }
