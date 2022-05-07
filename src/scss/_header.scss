@@ -97,7 +97,6 @@ header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        width: 100px;
 
         svg {
             fill: #fff;
@@ -352,8 +351,9 @@ header {
                     width: fit-content;
                     color: #fff;
 
-                    svg {
-                        margin-right: 2px;
+                    img {
+                        width: 18px;
+                        margin-right: 3px;
                     }
 
                     &:hover {
@@ -426,10 +426,6 @@ header {
                 &.exit {
                     align-items: center;
                     justify-content: flex-start;
-
-                    svg {
-                        margin-right: 2px;
-                    }
                 }
             }
 
