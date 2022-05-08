@@ -11,7 +11,7 @@ class Modal {
             this.menu = document.createElement('div');
             this.menu.classList.add('modal__menu');
 
-            if (this.option.closeOnBg == true) {
+            if (this.option.closeOnBg === true) {
                 this.modal.addEventListener('click', (event) => {
                     if (event.target.getAttribute('data-modal-name')) {
                         this.hide();

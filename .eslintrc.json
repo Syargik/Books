@@ -12,6 +12,9 @@
         "ecmaVersion": "latest"
     },
     "rules": {
-        "indent": ["error", 4]
+        "indent": ["error", 4],
+        "prefer-const": "error",
+        "semi": ["warn", "always"],
+        "no-new": "off"
     }
 }

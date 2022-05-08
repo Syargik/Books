@@ -4,7 +4,7 @@ class TopBar {
         this.init();
     }
 
-    dropdownMenu(target) {
+    static dropdownMenu(target) {
         if (!target.closest('.dropdown') && !target.closest('.profile')) {
             document.querySelectorAll('.dropdown').forEach((element) => element.classList.add('hidden'));
         }
@@ -47,6 +47,7 @@ class TopBar {
     }
 
     createModal() {
+        // eslint-disable-next-line no-undef
         this.modal = new Modal('auth', {
             background: true,
             closeOnBg: true,
